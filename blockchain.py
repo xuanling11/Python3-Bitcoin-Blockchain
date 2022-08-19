@@ -24,7 +24,10 @@ class Blockchain:
   def add_block(self, transactions):
     previous_block_hash = self.chain[len(self.chain)-1].hash
     new_block = Block(transactions, previous_block_hash)
+    # perform PoW of the new block
+    proof = self.proof_of_work(new_block)
     self.chain.append(new_block)
+    return proof, new_block
 
   def validate_chain(self):
     # loop starts with 1
