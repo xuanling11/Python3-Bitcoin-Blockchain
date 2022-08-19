@@ -40,3 +40,14 @@ class Blockchain:
         #only and if only both hash generate from the validator matches the blockchain generated hash, the block is valid and can be posted on the blockchain
       else:
         return True
+      
+   def proof_of_work(self, block, difficulty=2):
+    #Proof of Work
+    proof = block.generate_hash()
+    # finding the correct hash
+    while (proof[:difficulty] != '0'*difficulty):
+      block.nonce += 1
+      proof = block.generate_hash()
+    #reset nonce to 0
+    block.nonce = 0
+    return proof
