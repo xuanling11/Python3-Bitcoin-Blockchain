@@ -25,8 +25,6 @@ transaction6 = {
 
 mempool = [transaction1, transaction2, transaction3, transaction4, transaction5, transaction6]
 
-# add your code below
-
 #1 add a new transaction
 my_transaction = { 
   'amount': '100',
