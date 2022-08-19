@@ -9,19 +9,19 @@ transaction2 = {
 transaction3 = { 
   'amount': '300',
   'sender': 'Alice',
-  'receiver': 'Timothy' }
+  'receiver': 'Bob' }
 transaction4 = { 
   'amount': '300',
-  'sender': 'Rodrigo',
-  'receiver': 'Thomas' }
+  'sender': 'Bob',
+  'receiver': 'Alice' }
 transaction5 = { 
   'amount': '200',
-  'sender': 'Timothy',
-  'receiver': 'Thomas' }
+  'sender': 'Alice',
+  'receiver': 'Bob' }
 transaction6 = { 
   'amount': '400',
-  'sender': 'Tiffany',
-  'receiver': 'Xavier' }
+  'sender': 'Bob',
+  'receiver': 'Alice' }
 
 mempool = [transaction1, transaction2, transaction3, transaction4, transaction5, transaction6]
 
@@ -30,8 +30,8 @@ mempool = [transaction1, transaction2, transaction3, transaction4, transaction5,
 #1 add a new transaction
 my_transaction = { 
   'amount': '100',
-  'sender': 'George',
-  'receiver': 'Alex' }
+  'sender': 'Alice',
+  'receiver': 'Bob' }
 
 #2 add new transaction to the existing one
 mempool.append(my_transaction)
