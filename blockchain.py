@@ -22,10 +22,21 @@ class Blockchain:
   
   # add block to blockchain `chain`
   def add_block(self, transactions):
-    # previous block hash is n-1 block with hash
     previous_block_hash = self.chain[len(self.chain)-1].hash
-    # previous Block function needs two input: transactions and previous_hash
     new_block = Block(transactions, previous_block_hash)
-    #update the chain with a new block
     self.chain.append(new_block)
 
+  def validate_chain(self):
+    # loop starts with 1
+    for i in range(1, len(self.chain)):
+      # validator guess hash value
+      current = self.chain[i]
+      previous = self.chain[i-1]
+      # check if the validate hash is matching generate hash from the blockchain
+      if (current.hash != current.generate_hash()):
+        return False
+      elif (previous.hash != previous.generate_hash()):
+        return False
+        #only and if only both hash generate from the validator matches the blockchain generated hash, the block is valid and can be posted on the blockchain
+      else:
+        return True
